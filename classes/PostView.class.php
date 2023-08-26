@@ -1,29 +1,18 @@
 <?php
 
-class PostView extends Database{
+class PostView extends Post{
     private $id;
 
     public function __construct($id){
         $this->id = $id;
     }
 
-    private function get_blog(){
-        $sql = "SELECT * FROM users
-                INNER JOIN posts
-                ON posts.user_id = users.id
-                WHERE users.id = ?";
-        
-        $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$this->id]);
-
-        if($stmt->rowCount() == 0 ){
-            return 0;
-        }
-        return $stmt->fetchAll();
+    private function get_contents(){
+        return $this->get_blog($this->id);
     }
 
     public function show_blog(){
-        $result = $this->get_blog();
+        $result = $this->get_contents();
 
         if($result == 0){
             ?>
