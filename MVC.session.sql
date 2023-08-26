@@ -18,3 +18,6 @@ ALTER TABLE posts
 ADD author VARCHAR(255) NOT NULL;
 
 -- @block
+SELECT * FROM users
+INNER JOIN posts
+ON posts.user_id = users.id;

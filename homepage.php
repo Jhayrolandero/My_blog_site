@@ -1,7 +1,9 @@
 <?php
     session_start();
     if(isset($_SESSION["user"]) && isset($_SESSION["id"])){
-    include("welcome_message.php");
+        include("auto_loader.php");
+        include("message.php");
+        include("welcome_message.php");
 
 ?>
 <!DOCTYPE html>
@@ -18,6 +20,10 @@
     <div class="container">
         <a href="create_blog.php" class="btn btn-primary">Create Blog</a>
     </div>
+    <?php
+        $view_obj = new PublishView($_SESSION["id"]);
+        $view_obj->show_blog();
+    ?>
     
     <form action="homepage.php" method="POST" class="row">
         <div class="col-6">
