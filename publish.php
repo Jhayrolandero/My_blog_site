@@ -8,7 +8,7 @@
         $title = $_POST["title"];
         $content = $_POST["content"];
 
-        $create_blog_obj = new PublishCtrl($user_id, $author, $title, $content);
+        $create_blog_obj = new PostCtrl($user_id, $author, $title, $content);
         $create_blog_obj->create_blog();
     }
 

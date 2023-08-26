@@ -1,5 +1,5 @@
 <?php
-class Publish extends Database{
+class Post extends Database{
 
     protected function add_blog($user_id, $author, $title, $content ){
         $sql = "INSERT INTO posts (user_id, author, title, content)

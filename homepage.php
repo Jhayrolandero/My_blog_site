@@ -19,17 +19,23 @@
     
     <div class="container">
         <a href="create_blog.php" class="btn btn-primary">Create Blog</a>
-    </div>
-    <?php
-        $view_obj = new PublishView($_SESSION["id"]);
-        $view_obj->show_blog();
-    ?>
+        <hr>
+
+        <div class="row">
+            <div class="col text-align-center">
+            <?php
+                $view_obj = new PostView($_SESSION["id"]);
+                $view_obj->show_blog();
+            ?>
+            </div>
+        </div>
     
     <form action="homepage.php" method="POST" class="row">
         <div class="col-6">
             <button name="logout" class="btn btn-primary">Log out</button>
         </div>
     </form>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

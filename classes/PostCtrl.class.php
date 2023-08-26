@@ -1,6 +1,6 @@
 <?php
 
-    class PublishCtrl extends Publish{
+    class PostCtrl extends Post{
 
         private $user_id;
         private $author;
