@@ -23,10 +23,11 @@
 
         <div class="row">
             <div class="col text-align-center">
-            <?php
-                $view_obj = new PostView($_SESSION["id"]);
-                $view_obj->show_blog();
-            ?>
+                <?php
+                    $blog_obj = new BlogCtrl();
+                    $blog_obj->get_id($_SESSION["id"]);
+                    $blog_obj->render_blog();
+                ?>
             </div>
         </div>
     
@@ -37,6 +38,7 @@
     </form>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
 </body>
 </html>
 
