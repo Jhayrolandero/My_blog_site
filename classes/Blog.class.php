@@ -13,7 +13,8 @@ class Blog extends Database{
         $sql = "SELECT * FROM users
         INNER JOIN posts
         ON posts.user_id = users.id
-        WHERE users.id = ?";
+        WHERE users.id = ?
+        ORDER BY created_at DESC";
         
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);

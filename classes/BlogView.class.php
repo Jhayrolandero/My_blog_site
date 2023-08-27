@@ -2,7 +2,7 @@
 
 class BlogView extends BlogCtrl{
 
-    protected function show_blog($contents){
+    protected function preview_blog($contents){
         $result = $contents;
         if($result == 0){
             ?>
@@ -16,12 +16,21 @@ class BlogView extends BlogCtrl{
         }else{
             foreach($result as $res){
             ?>
-            <div class="row d-flex justify-content-center">
-                <a href="edit_blog.php">
-                    <?="Title: " . $res["title"] ."<br>"?>
-                    <?="Content: " . $res["content"]?>
-                </a>
-            </div>
+            <form action="view.php" method="post" class="row bg-primary text-white">
+                <input type="text" name="post_id" value="<?=$res["id"]?>" hidden>
+                <div class="col col-6">
+                    <label for="text">Title</label>
+                    <input type="text" name="post_title" value="<?=$res["title"]?>" class="form-control" readonly>
+                </div>
+                <div class="col col-6">
+                    <label for="text">Date</label>
+                    <input type="text" name="post_date" value="<?=$res["created_at"]?>" class="form-control" readonly>
+
+                </div>
+                <label for="text">Content</label>
+                <input type="text" name="post_content" value="<?=$res["content"]?>" class="form-control" readonly>
+                <button type="submit" name="edit_blog">Edit</button>
+            </form>
             <?php
         }
     }

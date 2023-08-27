@@ -58,7 +58,7 @@
 
         public function render_blog(){
             $view_obj = new BlogView();
-            $view_obj->show_blog($this->get_contents());
+            $view_obj->preview_blog($this->get_contents());
         }
 
     }
