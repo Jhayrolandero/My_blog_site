@@ -1,5 +1,6 @@
 <?php
 
+# Handle user interaction
     class BlogCtrl extends Blog{
 
         protected $user_id;

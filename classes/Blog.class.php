@@ -1,4 +1,6 @@
 <?php
+
+# Main class for handling all the blog data 
 class Blog extends Database{
 
     protected function add_blog($user_id, $author, $title, $content ){

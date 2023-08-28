@@ -1,5 +1,7 @@
 <?php
 
+# render the contents
+
 class BlogView extends BlogCtrl{
 
     protected function preview_blog($contents){
