@@ -3,7 +3,7 @@
         private $username;
         private $password;
 
-        public function __construct($username, $password){
+        public function get_credentials($username, $password){
             $this->username = $username;
             $this->password = $password;
         }

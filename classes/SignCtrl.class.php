@@ -6,7 +6,7 @@
         private $rpassword;
         private $email;
 
-        function __construct($username, $password, $rpassword, $email){
+        public function get_credentials($username, $password, $rpassword, $email){
             $this->username = $username;
             $this->password = $password;
             $this->rpassword = $rpassword;

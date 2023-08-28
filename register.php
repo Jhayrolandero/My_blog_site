@@ -8,7 +8,8 @@
         $email = $_POST["email"];
         $rpassword = $_POST["rpass"];
         
-        $sign_obj = new SignCtrl($username, $password, $rpassword,$email);
+        $sign_obj = new SignCtrl();
+        $sign_obj->get_credentials($username,$password,$rpassword, $email);
         $sign_obj->sign_user();
     }
     ?>
